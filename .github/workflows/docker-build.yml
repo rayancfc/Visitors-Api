@@ -23,4 +23,5 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push ghcr.io/rayancfc/visitors-api:latest
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+    docker push ghcr.io/rayancfc/visitors-api:latest
