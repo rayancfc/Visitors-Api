@@ -18,5 +18,4 @@ jobs:
 
       - name: Log in and Push to GHCR
         run: |
-          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u rayancfc --password-stdin
           docker push ghcr.io/rayancfc/visitors-api:latest
